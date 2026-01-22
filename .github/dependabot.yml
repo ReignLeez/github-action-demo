@@ -4,4 +4,4 @@ updates:
     directory: "/"          # Root-Verzeichnis
     schedule:
       interval: "daily"
-      time: "13:24"
+      time: "13:15"
