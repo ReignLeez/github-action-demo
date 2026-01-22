@@ -1,9 +1,10 @@
-name: CI
+name: CI Branch Check
 
 on:
   push:
     branches:
       - main
+      - dev
 
 jobs:
   build:
@@ -13,5 +14,10 @@ jobs:
       - name: Repository auschecken
         uses: actions/checkout@v2
 
-      - name: Hello World ausgeben
-        run: echo "Hello, World!"
+      - name: Branch erkennen und Text ausgeben
+        run: |
+          if [ "$GITHUB_REF_NAME" = "main" ]; then
+            echo "Push auf MAIN-Branch"
+          else
+            echo "Push auf DEV-Branch"
+          fi
